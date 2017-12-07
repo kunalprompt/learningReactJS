@@ -11,32 +11,46 @@ export default class TodoAppComponent extends Component{
 
 		this.addTodoItem = this.addTodoItem.bind(this);
 		this.closeTodoItem = this.closeTodoItem.bind(this);
+		this.deleteTodoItem = this.deleteTodoItem.bind(this);
 	}
 
 	addTodoItem(event){
 		if(event.keyCode===13){  /* handling enter */
 			let item_data = event.target.value;
+			if(item_data.length ===0)
+				return;
         	event.currentTarget.value = "";
-			this.state.items.push({content:item_data, active:true});
+			this.state.items.push({
+				content: item_data, 
+				active: true,
+				identifier: Math.random()
+			});
 			this.setState({
 				items: this.state.items
-			})
+			});
 		}
 		if (event.target.value === 'Add'){ /* handling button click */
 			let item_data = document.getElementsByClassName('TodoInput')[0].value;
+			if(item_data.length ===0)
+				return;
 			document.getElementsByClassName('TodoInput')[0].value = "";
-			this.state.items.push({content:item_data, active:true});
+			this.state.items.push({
+				content: item_data, 
+				active: true,
+				identifier: Math.random()
+			});
 			this.setState({
 				items: this.state.items
-			})
+			});
+			document.getElementsByClassName('TodoInput')[0].focus();
 		}
 	}
 
 	closeTodoItem(event){
-		let item_idx = parseInt(event.target.getAttribute("data-content-idx"), 10);
+		let item_id = parseFloat(event.target.getAttribute("data-content-id"));
 		let state_items = this.state.items;
 		for(let i=0; i<state_items.length; i++){
-			if(i===item_idx){
+			if(state_items[i].identifier===item_id){
 				state_items[i].active=!state_items[i].active;
 				break;
 			}
@@ -44,6 +58,20 @@ export default class TodoAppComponent extends Component{
 		this.setState({
 			items: state_items
 		})
+	}
+
+	deleteTodoItem(event){
+		let item_id = parseFloat(event.target.getAttribute("data-content-id"));
+		let state_items = this.state.items;
+		for(let i=0; i<state_items.length; i++){
+			if(state_items[i].identifier===item_id){
+				state_items.splice(i, 1);
+				break;
+			}
+		}
+		this.setState({
+			items: state_items
+		});
 	}
 
 	render() {
@@ -56,6 +84,7 @@ export default class TodoAppComponent extends Component{
 			  return 1;
 			return 0;
 		}
+		let state_items = this.state.items;
 
 		return (
 			<div className="TodoContainer">
@@ -71,15 +100,16 @@ export default class TodoAppComponent extends Component{
 
 					}
 					
-					{this.state.items.sort(compare_active).map(
+					{state_items.sort(compare_active).map(
 						function(item, index){
 							return (
 								<TodoItemComponent 
 									key={index} 
-									content={item.content} 
-									contentIdx={index}
+									content={item.content}
+									contentId={item.identifier}
 									isChecked={!item.active}
-									handler={this.closeTodoItem} />
+									handler={this.closeTodoItem}
+									deleteHandler={this.deleteTodoItem} />
 							)
 						}.bind(this))
 					}
@@ -94,10 +124,12 @@ export default class TodoAppComponent extends Component{
 class TodoItemComponent extends Component{
 	render() {
 		return (
-			<div className={this.props.isChecked ? "TodoItemInCompleteCSS" : "TodoItemCompletedCSS"}>
+			<div className={this.props.isChecked ? "TodoItemCompletedCSS" : "TodoItemInCompleteCSS"}>
 				<input type="checkbox" onChange={this.props.handler}
-					 checked={this.props.isChecked} data-content-idx={this.props.contentIdx} />
-				{this.props.content}
+					 checked={this.props.isChecked} data-content-id={this.props.contentId} />
+				<span className="TodoItemContent">{this.props.content}</span>
+				<input type="submit" className="button delete" value="Delete"
+					 data-content-id={this.props.contentId} onClick={this.props.deleteHandler} />
 			</div>
 		);
 	}

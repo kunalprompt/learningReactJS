@@ -23,7 +23,8 @@
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 7px 8px;
+	padding: 7px 8px;
+	outline: none;
 }
 .TotalTodoItemsCSS{
 	background-color: #efefef;
@@ -34,17 +35,41 @@
 .TodoItemInCompleteCSS{
 	padding: 10px;
 	margin-bottom: 5px; 
+	position: relative;
 }
 .TodoItemCompletedCSS{
+	background-color: #eff0f1;
+}
+.TodoItemInCompleteCSS{
 	-webkit-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
 	-moz-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
 	box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
 }
-.TodoItemInCompleteCSS{
-	background-color: #eff0f1;
+.TodoItemContent{
+	width: 80%;
+	display: inline-block;
 }
 .TodoItemsContainer input{
 	margin-right: 10px;
+	cursor: pointer;
+	vertical-align: top;
+}
+.TodoItemsContainer input.button{
+	position: absolute;
+	right: 5px;
+	top: 7px;
+    font-size: 12px;
+    background-color: #ececec;
+    border: none;
+    color: #000000;
+	padding: 4px 4px;
+	border: 1px solid #d4d4d4;
+	outline: none;
+}
+.TodoItemsContainer input.button:hover{
+    background-color: #900;
+    color: #ffffff;
+	border: 1px solid #900;
 }
 
 @media screen and (max-width: 767px) {
