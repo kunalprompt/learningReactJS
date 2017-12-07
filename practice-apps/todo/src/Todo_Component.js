@@ -14,9 +14,17 @@ export default class TodoAppComponent extends Component{
 	}
 
 	addTodoItem(event){
-		if(event.keyCode===13){
+		if(event.keyCode===13){  /* handling enter */
 			let item_data = event.target.value;
         	event.currentTarget.value = "";
+			this.state.items.push({content:item_data, active:true});
+			this.setState({
+				items: this.state.items
+			})
+		}
+		if (event.target.value === 'Add'){ /* handling button click */
+			let item_data = document.getElementsByClassName('TodoInput')[0].value;
+			document.getElementsByClassName('TodoInput')[0].value = "";
 			this.state.items.push({content:item_data, active:true});
 			this.setState({
 				items: this.state.items
@@ -54,6 +62,7 @@ export default class TodoAppComponent extends Component{
 				<div className="TodoHeader">
 					<input type="text" className="TodoInput" placeholder="What're your todos today?" 
 						onKeyUp={this.addTodoItem} />
+					<input type="submit" className="TodoSubmit" value="Add" onClick={this.addTodoItem}/>
 				</div>
 				<div className="TodoItemsContainer">
 					{todos_count > 0 && 

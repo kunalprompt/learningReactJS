@@ -18,6 +18,13 @@
     font-size: 16px;
     outline-width: 0;
 }
+.TodoSubmit{
+	font-size: 16px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7px 8px;
+}
 .TotalTodoItemsCSS{
 	background-color: #efefef;
 	padding: 10px;
@@ -42,12 +49,12 @@
 
 @media screen and (max-width: 767px) {
 	.TodoContainer{
-		width: 90%;
+		width: 95%;
 	}
 	.TodoHeader{
 		padding: 10px;
 	}
 	.TodoInput{
-		width: 90%;
+		width: 75%;
 	}
 }
