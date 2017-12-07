@@ -1,0 +1,53 @@
+/* Todo App */
+.TodoContainer{
+	width: 60%;
+	margin: 0px auto;
+	margin-top: 20px;
+}
+.TodoHeader{
+	background-color: #efefef;
+	padding: 20px;
+	text-align: center;
+}
+.TodoInput{
+	width: 70%;
+    height: 30px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    outline-width: 0;
+}
+.TotalTodoItemsCSS{
+	background-color: #efefef;
+	padding: 10px;
+	margin-bottom: 5px; 
+}
+.TodoItemCompletedCSS, 
+.TodoItemInCompleteCSS{
+	padding: 10px;
+	margin-bottom: 5px; 
+}
+.TodoItemCompletedCSS{
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
+	-moz-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
+	box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
+}
+.TodoItemInCompleteCSS{
+	background-color: #eff0f1;
+}
+.TodoItemsContainer input{
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	.TodoContainer{
+		width: 90%;
+	}
+	.TodoHeader{
+		padding: 10px;
+	}
+	.TodoInput{
+		width: 90%;
+	}
+}
