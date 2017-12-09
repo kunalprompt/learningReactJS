@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import logo from './logo.svg';
 import swift80_53 from './Swift2018_80x53.png';
 import './App.css';
 import './CustomComponents.css';
