@@ -1,0 +1,52 @@
+
+.RoutesContainerCSS{
+    background-color: #a41919;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.RoutesWrapperCSS{
+    width: 75%;
+    margin: 0 auto;
+}
+.LogoContainerCSS{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    color: #ffffff;
+}
+.LogoWrapperCSS img{
+    vertical-align: middle;
+}
+.LogoWrapperCSS span{
+    font-size: 25px;
+    vertical-align: middle;
+    margin-left: 25px;
+}
+.LinksContainerCSS{
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+}
+.LinksWrapperCSS{
+    text-align: right;
+}
+.ComponentLinkCSS{
+    margin: 0px 20px;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: normal;
+    display: inline-block;
+    height: 100%;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.15s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.ComponentLinkCSS:hover{
+    color: rgba(255,255,255,0.5);
+}
+.SwitchesWrapperCSS{
+    width: 75%;
+    margin: 0 auto;
+}
