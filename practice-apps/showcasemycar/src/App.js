@@ -25,7 +25,7 @@ class App extends Component {
 								<div className="LinksContainerCSS">
 									<div className="LinksWrapperCSS">
 										<Link className="ComponentLinkCSS" to={'/'}>Home</Link>
-										<Link className="ComponentLinkCSS" to={'/images'}>Images</Link>
+										<Link className="ComponentLinkCSS" to={'/colors'}>Colors</Link>
 										<Link className="ComponentLinkCSS" to={'/specifications'}>Specifications</Link>
 										<Link className="ComponentLinkCSS" to={'/purchase'}>Purchase</Link>
 									</div>
@@ -36,7 +36,7 @@ class App extends Component {
 							<div className="SwitchesWrapperCSS">
 								<Switch>
 									<Route exact path="/" component={HomePageComponent} />
-									<Route exact path="/images" component={ImagesComponent} />
+									<Route exact path="/colors" component={ImagesComponent} />
 									<Route exact path="/specifications" component={SpecificationComponent} />
 								</Switch>
 							</div>
