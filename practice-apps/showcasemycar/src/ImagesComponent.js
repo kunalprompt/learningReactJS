@@ -14,6 +14,40 @@ import Swift_BK_G from "./swift_black_grey.png";
 import Swift_G_BK from "./swift_grey_black.png";
 
 
+class HybridColorsShowcaseComponent extends Component{
+    render(){
+        return(
+            <div className="HybridColorsShowcaseComponentCSS">
+                {
+                    this.props.number%2 === 0 ? (
+                        <div>
+                            <div className="ColorImageContainerCSS">
+                                <img src={this.props.dataImage} alt="Swift 2018"/>
+                            </div>
+                            <div className="ColorDescriptionContainerCSS">
+                                <h3 className="CreteFont">Color Combination</h3>
+                                <h4 className="CreteFont" style={{backgroundColor: this.props.dataColorBody}}>Body Color</h4>
+                                <h4 className="CreteFont" style={{backgroundColor: this.props.dataColorRoof}}>Roof Color</h4>
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            <div className="ColorDescriptionContainerCSS">
+                                <h3 className="CreteFont">Color Combination</h3>
+                                <h4 className="CreteFont" style={{backgroundColor: this.props.dataColorBody}}>Body Color</h4>
+                                <h4 className="CreteFont" style={{backgroundColor: this.props.dataColorRoof}}>Roof Color</h4>
+                            </div>
+                            <div className="ColorImageContainerCSS MoveRight">
+                                <img src={this.props.dataImage} alt="Swift 2018"/>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+        )
+    }
+}
+
 export default class ImagesComponent extends Component{
     constructor(props){
         super(props);
@@ -25,9 +59,11 @@ export default class ImagesComponent extends Component{
             'lightGrey': ['#767b7e', Swift_L_G],
             'mediumGrey': ['#545358', Swift_M_G],
             'lightRed': ['#c3083c', Swift_L_R],
-            // 'blueGrey': ['#01518e', Swift_BL_G, '#767b7e'],
-            // 'blackGrey': ['#1d1b1e', Swift_BK_G, '#767b7e'],
-            // 'greyBlack': ['#545358', Swift_G_BK, '#1d1b1e']
+        }
+        this.HybridColorsMap = {
+            'blueGrey': ['#01518e', '#767b7e', Swift_BL_G],
+            'blackGrey': ['#1d1b1e', '#767b7e', Swift_BK_G],
+            'greyBlack': ['#545358', '#1d1b1e', Swift_G_BK]
         }
         this.state = {
             image: Swift_R
@@ -49,9 +85,9 @@ export default class ImagesComponent extends Component{
             <div className="ImagesContainerCSS">
 
                 <div className="ImagesWrapperCSS">
-                    <h1>Expected Colors</h1>
+                    <h1 className="CreteFont">Expected Colors Variants</h1>
                     <div className="ShowcaseContainerCSS">
-                        <img src={this.state.image}/>
+                        <img src={this.state.image} alt="Swift 2018"/>
                     </div>
                     <div className="ShowMakerButtonCSS">
                         {
@@ -69,9 +105,24 @@ export default class ImagesComponent extends Component{
                                 }.bind(this)
                             )
                         }
-
                     </div>
-
+                    <div className="HybridColorsContainerCSS">
+                        <h1>Hybrid Colors</h1>
+                        {
+                            Object.keys(this.HybridColorsMap).map(
+                                function(item, index){
+                                    return (
+                                        <HybridColorsShowcaseComponent
+                                            key={index}
+                                            number={index}
+                                            dataColorBody={this.HybridColorsMap[item][0]}
+                                            dataColorRoof={this.HybridColorsMap[item][1]}
+                                            dataImage={this.HybridColorsMap[item][2]} />
+                                    )
+                                }.bind(this)
+                            )
+                        }
+                    </div>
                 </div>
                 
             </div>

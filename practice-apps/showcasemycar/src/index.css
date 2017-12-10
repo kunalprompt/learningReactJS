@@ -1,7 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Crete Round', serif;
+}
+.JosefinFont{
+	font-family: 'Josefin Slab', serif;
+}
+.CreteFont{
+	font-family: 'Crete Round', serif;
 }
 #loader{
 	width: 75%;
@@ -16,4 +22,18 @@ body {
 .footerWrapper{
 	width: 75%;
 	margin: 0 auto;
+}
+.footerWrapper a{
+	text-decoration: none;
+	color: #ffffff;
+}
+.Percent40WidthCSS{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.Percent60WidthCSS{
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
 }

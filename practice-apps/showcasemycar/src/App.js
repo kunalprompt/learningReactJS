@@ -5,7 +5,7 @@ import './App.css';
 import './CustomComponents.css';
 import HomePageComponent from "./HomePageComponent";
 import ImagesComponent from "./ImagesComponent";
-import SpecificationComponent from "./SpecificationComponent";
+import FeaturesComponent from "./FeaturesComponent";
 
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
 							<div className="RoutesWrapperCSS">
 								<div className="LogoContainerCSS">
 									<div className="LogoWrapperCSS">
-										<img src={swift80_53}/>
+										<img src={swift80_53} alt="Swift 2018" />
 										<span>SWIFT 2018</span>
 									</div>
 								</div>
@@ -26,8 +26,7 @@ class App extends Component {
 									<div className="LinksWrapperCSS">
 										<Link className="ComponentLinkCSS" to={'/'}>Home</Link>
 										<Link className="ComponentLinkCSS" to={'/colors'}>Colors</Link>
-										<Link className="ComponentLinkCSS" to={'/specifications'}>Specifications</Link>
-										<Link className="ComponentLinkCSS" to={'/purchase'}>Purchase</Link>
+										<Link className="ComponentLinkCSS" to={'/features'}>Features</Link>
 									</div>
 								</div>
 							</div>
@@ -37,7 +36,7 @@ class App extends Component {
 								<Switch>
 									<Route exact path="/" component={HomePageComponent} />
 									<Route exact path="/colors" component={ImagesComponent} />
-									<Route exact path="/specifications" component={SpecificationComponent} />
+									<Route exact path="/features" component={FeaturesComponent} />
 								</Switch>
 							</div>
 						</div>

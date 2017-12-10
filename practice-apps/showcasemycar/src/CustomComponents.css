@@ -45,6 +45,7 @@
 .ComponentLinkCSS:hover{
     color: rgba(255,255,255,0.5);
 }
+
 .SwitchesWrapperCSS{
     width: 75%;
     margin: 0 auto;
@@ -55,7 +56,6 @@
 }
 .SectionBelowVideoCSS h1, 
 .SectionBelowVideoCSS h2{
-    font-family: 'Crete Round', serif;
     text-align: center;
 }
 .SectionBelowVideoCSS h1{
@@ -94,7 +94,6 @@
 .NewsArticleTextWrapperCSS h2{
     margin-top: 5px;
     color: #c3083c;
-    font-family: 'Crete Round', serif;
 }
 .LeftPadding{
     padding-left: 20px;
@@ -105,7 +104,6 @@
 
 .ImagesWrapperCSS h1{
     text-align: center;
-    font-family: 'Crete Round', serif;
     color: #c3083c;
 }
 .ShowMakerButtonCSS{
@@ -127,15 +125,98 @@
     margin: 0px 7px;
 }
 
+.HybridColorsContainerCSS{
+    margin-top: 20px;
+}
+.HybridColorsShowcaseComponentCSS{
+    margin: 10px 0px;
+}
+.ColorImageContainerCSS{
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+}
+.ColorImageContainerCSS img{
+    width: 85%;
+    max-height: 480px;
+}
+.ColorDescriptionContainerCSS{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.ColorDescriptionContainerCSS h4{
+    text-align: center;
+    color: #ffffff;
+    margin: 0px;
+    padding: 15px;
+}
+
+.InteriorsComponentCSS{
+    width: 100%;
+    height: 480px;
+    max-height: 520px;
+    position: relative;
+}
+.InteriorComponentFooterContainerCSS{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.InteriorComponentFooterWrapperCSS h1, 
+.InteriorComponentFooterWrapperCSS h2, 
+.InteriorComponentFooterWrapperCSS h3{
+    text-align: center;
+    font-family: 'Crete Round', serif;
+    color: #ffffff;
+}
+.InteriorComponentFooterWrapperCSS h1,
+.InteriorComponentFooterWrapperCSS h3{
+    color: #c3083c;
+}
+
+.OptionsWrapperCSS{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.DimensionsList{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+.DimensionsList li{
+    margin: 7px 0px;
+}
+.DimensionsList li b{
+    font-family: 'Crete Round', serif;
+    margin-right: 10px;
+}
+
+
 @media screen and (max-width: 798px) {
+    .RoutesWrapperCSS{
+        width: 95%;
+    }
     .LogoWrapperCSS span{
         display: block;
-        font-size: 20px;
+        font-size: 14px;
         margin-left: 0px;
+    }
+    .ComponentLinkCSS{
+        margin: 0px 10px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .SwitchesWrapperCSS{
+        width: 98%;
     }
     .SwitchesWrapperCSS iframe{
         width: 100%;
         max-height: 320px;
+    }
+    .footerWrapper{
+        width: 95%;
     }
 
 }
