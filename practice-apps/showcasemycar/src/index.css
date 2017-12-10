@@ -25,7 +25,7 @@ body {
 }
 .footerWrapper a{
 	text-decoration: none;
-	color: #ffffff;
+	color: rgb(227, 235, 238);
 }
 .Percent40WidthCSS{
     width: 40%;

@@ -16,16 +16,16 @@ export default class FeaturesComponent extends Component{
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover"}}>
                     
-                    <div class="InteriorComponentFooterContainerCSS">
-                        <div class="InteriorComponentFooterWrapperCSS">
+                    <div className="InteriorComponentFooterContainerCSS">
+                        <div className="InteriorComponentFooterWrapperCSS">
                             <h1>Brand New Re-designed Interior</h1>
                             <h2>Circular Dials and Monitors</h2>
                             <h3>Re-designed centre console</h3>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h1>Engine Options</h1>
+                <div className="FeatuersContainerCSS">
+                    <h1>Engine options and other details</h1>
                     <div className="OptionsContainerCSS JosefinFont">
                         <div className="OptionsWrapperCSS">
                             <div className="Percent40WidthCSS CreteFont">

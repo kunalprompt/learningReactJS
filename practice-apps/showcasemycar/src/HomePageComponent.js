@@ -11,7 +11,7 @@ class SampleHomePageVideo extends React.Component {
             suggestedQuality: 'large',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 0,
-                controls: 0,
+                controls: 1,
                 disablekb: 0,
                 loop: 1,
                 showinfo: 0,
@@ -33,15 +33,15 @@ class SampleHomePageVideo extends React.Component {
 
     _onReady(event) {
         event.target.setPlaybackQuality('hd720');
-        event.target.setVolume(0);
-        event.target.playVideo();
+        event.target.setVolume(100);
+        // event.target.playVideo();
     }
     _onPlayerStateChange(event) {
         if (event.data === 1) { // on Play
             event.target.setPlaybackQuality('hd720');
         }
         if (event.data === 2) { // on Pause
-            event.target.playVideo();
+            // event.target.playVideo();
         }
     }
     _onPlaybackQualityChange(event) {
@@ -49,7 +49,8 @@ class SampleHomePageVideo extends React.Component {
     }
 }
 
-class NewsArticleComponentLeftImage extends Component {
+
+class NewsArticleComponent extends Component {
     render(){
         return (
             <div className="NewsArticleComponentCSS JosefinFont">
@@ -112,18 +113,20 @@ class NewsArticleComponentLeftImage extends Component {
     }
 }
 
+
 export default class HomePageComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
             news_data: []
         }
+        this.fetchLatestSwiftNews=this.fetchLatestSwiftNews.bind(this);
     }
-
-    componentDidMount() {
-        document.getElementById('loader').style.display = 'none';
-        
+    fetchLatestSwiftNews(){
         var self = this;
+
+        document.getElementById('FetchSwiftNews').value='Loading...';
+
         let apiKey = 'b523d9f4be244bf9b9556da0f44a1972',
             query = 'maruti swift 2018 india',
             origin = 'https://newsapi.org/v2/everything';
@@ -142,7 +145,15 @@ export default class HomePageComponent extends Component {
             .then(function (data) {
                 if('articles' in data)
                     self.setState({ news_data: data.articles });
+                document.getElementById('NewsButtonLoaderContainer').style.display='none';
+            }).catch(function (error){
+                alert("Something went wrong. Please check your Network connection.");
+                document.getElementById('FetchSwiftNews').value='Get Latest News about Swift';
             });
+    }
+
+    componentDidMount() {
+        document.getElementById('loader').style.display = 'none';
     }
 
     render() {
@@ -156,12 +167,19 @@ export default class HomePageComponent extends Component {
                     <h2>
                         Expected Launch date (India) - Feb. 2018
                     </h2>
+                    <div id="NewsButtonLoaderContainer">
+                        <input id="FetchSwiftNews" 
+                            className="CreteFont"
+                            type="submit" 
+                            onClick={this.fetchLatestSwiftNews}
+                            value="Get Latest News about Swift" />
+                    </div>
                 </div>
                 <div className="ArtciclesContainerCSS">
                     {
                         this.state.news_data.map(function(item, index){
                             return (
-                                <NewsArticleComponentLeftImage
+                                <NewsArticleComponent
                                     key={index}
                                     item_number={index}
                                     url={item.url}

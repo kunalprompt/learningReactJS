@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import swift80_53 from './Swift2018_80x53.png';
+import swift_logo from './logo_swift_white.png';
 import './App.css';
 import './CustomComponents.css';
 import HomePageComponent from "./HomePageComponent";
@@ -18,15 +18,15 @@ class App extends Component {
 							<div className="RoutesWrapperCSS">
 								<div className="LogoContainerCSS">
 									<div className="LogoWrapperCSS">
-										<img src={swift80_53} alt="Swift 2018" />
+										<img src={swift_logo} alt="Swift 2018" />
 										<span>SWIFT 2018</span>
 									</div>
 								</div>
 								<div className="LinksContainerCSS">
 									<div className="LinksWrapperCSS">
-										<Link className="ComponentLinkCSS" to={'/swift18'}>Home</Link>
-										<Link className="ComponentLinkCSS" to={'/swift18/colors'}>Colors</Link>
-										<Link className="ComponentLinkCSS" to={'/swift18/features'}>Features</Link>
+										<Link className="ComponentLinkCSS" to={`${process.env.PUBLIC_URL}/`}>Home</Link>
+										<Link className="ComponentLinkCSS" to={`${process.env.PUBLIC_URL}/colors`}>Colors</Link>
+										<Link className="ComponentLinkCSS" to={`${process.env.PUBLIC_URL}/features`}>Features</Link>
 									</div>
 								</div>
 							</div>
@@ -34,9 +34,9 @@ class App extends Component {
 						<div className="SwitchesContainerCSS">
 							<div className="SwitchesWrapperCSS">
 								<Switch>
-									<Route exact path="/swift18" component={HomePageComponent} />
-									<Route exact path="/swift18/colors" component={ImagesComponent} />
-									<Route exact path="/swift18/features" component={FeaturesComponent} />
+									<Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePageComponent} />
+									<Route exact path={`${process.env.PUBLIC_URL}/colors`} component={ImagesComponent} />
+									<Route exact path={`${process.env.PUBLIC_URL}/features`} component={FeaturesComponent} />
 								</Switch>
 							</div>
 						</div>
