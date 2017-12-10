@@ -186,11 +186,11 @@
 .InteriorComponentFooterWrapperCSS h3{
     text-align: center;
     font-family: 'Crete Round', serif;
-    color: #ffffff;
+    color: #c3083c;
 }
 .InteriorComponentFooterWrapperCSS h1,
 .InteriorComponentFooterWrapperCSS h3{
-    color: #c3083c;
+    color: #ffffff;
 }
 .FeatuersContainerCSS{
     padding: 0px 7px;
@@ -224,9 +224,9 @@
         margin-left: 0px;
     }
     .ComponentLinkCSS{
-        margin: 0px 10px;
-        font-size: 14px;
-        line-height: 30px;
+        font-size: 13px;
+        line-height: 20px;
+        display: block;
     }
     .SwitchesWrapperCSS{
         width: 100%;
@@ -235,8 +235,17 @@
         width: 100%;
         max-height: 320px;
     }
+    .SectionBelowVideoCSS h1{
+        font-size: 30px;
+    }
+    .SectionBelowVideoCSS h2{
+        font-size: 20px;
+    }
+    .ArtciclesContainerCSS{
+        padding: 0px 7px;
+    }
     .NewsArticleImageContainerCSS{
-        width: 70%;
+        width: 80%;
     }
     .NewsArticleTextContainerCSS{
         width: 100%;
@@ -246,6 +255,26 @@
     }
     .MoveRight{
         text-align: left;
+    }
+    .ImagesWrapperCSS h1{
+        font-size: 25px;
+    }
+    .ColorButtonCSS{
+        width: 30px;
+        height: 30px;
+    }
+    .ColorDescriptionContainerCSS h3{
+        font-size: 14px;
+    }
+    .ColorDescriptionContainerCSS h4{
+        font-size: 14px;
+        padding: 7px;
+    }
+    .InteriorComponentFooterWrapperCSS h1{
+        font-size: 25px;
+    }
+    .FeatuersContainerCSS h1{
+        font-size: 25px;
     }
     .footerWrapper{
         width: 95%;

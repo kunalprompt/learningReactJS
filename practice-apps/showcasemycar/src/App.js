@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import swift_logo from './logo_swift_white.png';
-import './App.css';
 import './CustomComponents.css';
 import HomePageComponent from "./HomePageComponent";
 import ImagesComponent from "./ImagesComponent";

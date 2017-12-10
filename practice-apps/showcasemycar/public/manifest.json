@@ -4,27 +4,27 @@
     "description": "ReactJS SPA App showcasing Maruti Suzuki Swift 2018",
     "icons": [
         {
-            "src": "./rsz_swift_light_red_128.png",
+            "src": "./rsz_swift_manifest_white_128.png",
             "type": "image/png",
             "sizes": "128x128"
         },
         {
-            "src": "./rsz_swift_light_red_144.png",
+            "src": "./rsz_swift_manifest_white_144.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "./rsz_swift_light_red_192.png",
+            "src": "./rsz_swift_manifest_white_192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "./rsz_swift_light_red_256.png",
+            "src": "./rsz_swift_manifest_white_256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "./rsz_swift_light_red_384.png",
+            "src": "./rsz_swift_manifest_white_384.png",
             "sizes": "384x384",
             "type": "image/png"
         },
