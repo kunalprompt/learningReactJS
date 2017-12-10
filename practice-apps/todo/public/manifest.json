@@ -1,6 +1,6 @@
 {
-	"short_name": "Daily Todos",
-	"name": "Daily Todos App",
+	"short_name": "Daily todos",
+	"name": "Daily todos app by Kunal Sharma",
 	"description": "A simple todo app developed in ReactJs by Kunal Sharma.",
 	"icons": [
         {
@@ -34,7 +34,7 @@
             "type": "image/png"
         }
     ],
-	"start_url": "./index.html?addtoHome=true",
+	"start_url": "./?addtoHome=true",
 	"display": "standalone",
 	"theme_color": "#4CAF50",
 	"background_color": "#4CAF50"

@@ -84,4 +84,7 @@
 	.TodoInput{
 		width: 75%;
 	}
+	.TotalTodoItemsCSS span{
+		display: block;
+	}
 }
