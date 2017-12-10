@@ -1,12 +1,13 @@
 /* Todo App */
 .TodoContainer{
-	width: 60%;
+	width: 80%;
 	margin: 0px auto;
 	margin-top: 20px;
+	min-height: 512px;
 }
 .TodoHeader{
 	background-color: #efefef;
-	padding: 20px;
+	padding: 20px 0px;
 	text-align: center;
 }
 .TodoInput{
@@ -29,7 +30,11 @@
 .TotalTodoItemsCSS{
 	background-color: #efefef;
 	padding: 10px;
-	margin-bottom: 5px; 
+	margin-bottom: 5px;
+	text-align: center;
+}
+.TotalTodoItemsCSS span{
+	margin: 0px 15px;
 }
 .TodoItemCompletedCSS, 
 .TodoItemInCompleteCSS{
@@ -38,12 +43,13 @@
 	position: relative;
 }
 .TodoItemCompletedCSS{
-	background-color: #eff0f1;
+	background-color: #d4d4d4;
 }
 .TodoItemInCompleteCSS{
-	-webkit-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
-	-moz-box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
-	box-shadow: 0px 0px 2px 2px rgba(239,239,239,1);
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+	-moz-box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+	box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
 }
 .TodoItemContent{
 	width: 80%;
@@ -59,17 +65,13 @@
 	right: 5px;
 	top: 7px;
     font-size: 12px;
-    background-color: #ececec;
     border: none;
     color: #000000;
 	padding: 4px 4px;
-	border: 1px solid #d4d4d4;
-	outline: none;
-}
-.TodoItemsContainer input.button:hover{
     background-color: #900;
     color: #ffffff;
 	border: 1px solid #900;
+	outline: none;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Todo.css';
+import './Todo_Component.css';
+
 
 export default class TodoAppComponent extends Component{
 	constructor(props){
@@ -75,7 +76,16 @@ export default class TodoAppComponent extends Component{
 	}
 
 	render() {
-		let todos_count = this.state.items.length;
+		let state_items = this.state.items;
+		let completed_count = 0, incomplete_count = 0;
+		
+		for(let i=0; i<state_items.length; i++){
+			if(state_items[i].active===true)
+				incomplete_count += 1;
+			else
+				completed_count += 1;
+		}
+
 		
 		function compare_active(a, b) {
 			if (a.active === true && b.active===false)
@@ -84,7 +94,6 @@ export default class TodoAppComponent extends Component{
 			  return 1;
 			return 0;
 		}
-		let state_items = this.state.items;
 
 		return (
 			<div className="TodoContainer">
@@ -94,9 +103,12 @@ export default class TodoAppComponent extends Component{
 					<input type="submit" className="TodoSubmit" value="Add" onClick={this.addTodoItem}/>
 				</div>
 				<div className="TodoItemsContainer">
-					{todos_count > 0 && 
+					{completed_count + incomplete_count > 0 && 
 
-						<h3 className="TotalTodoItemsCSS">Total Todos - {todos_count}</h3>
+						<h3 className="TotalTodoItemsCSS">
+							<span>Completed todos - {completed_count}</span>
+							<span>Incomplete todos - {incomplete_count}</span>
+						</h3>
 
 					}
 					
