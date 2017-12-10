@@ -121,6 +121,8 @@ export default class HomePageComponent extends Component {
     }
 
     componentDidMount() {
+        document.getElementById('loader').style.display = 'none';
+        
         var self = this;
         let apiKey = 'b523d9f4be244bf9b9556da0f44a1972',
             query = 'maruti swift 2018 india',
@@ -141,7 +143,6 @@ export default class HomePageComponent extends Component {
                 if('articles' in data)
                     self.setState({ news_data: data.articles });
             });
-        document.getElementById('loader').style.display = 'none';
     }
 
     render() {

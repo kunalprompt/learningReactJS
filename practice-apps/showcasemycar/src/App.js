@@ -24,9 +24,9 @@ class App extends Component {
 								</div>
 								<div className="LinksContainerCSS">
 									<div className="LinksWrapperCSS">
-										<Link className="ComponentLinkCSS" to={'/'}>Home</Link>
-										<Link className="ComponentLinkCSS" to={'/colors'}>Colors</Link>
-										<Link className="ComponentLinkCSS" to={'/features'}>Features</Link>
+										<Link className="ComponentLinkCSS" to={'/swift18'}>Home</Link>
+										<Link className="ComponentLinkCSS" to={'/swift18/colors'}>Colors</Link>
+										<Link className="ComponentLinkCSS" to={'/swift18/features'}>Features</Link>
 									</div>
 								</div>
 							</div>
@@ -34,9 +34,9 @@ class App extends Component {
 						<div className="SwitchesContainerCSS">
 							<div className="SwitchesWrapperCSS">
 								<Switch>
-									<Route exact path="/" component={HomePageComponent} />
-									<Route exact path="/colors" component={ImagesComponent} />
-									<Route exact path="/features" component={FeaturesComponent} />
+									<Route exact path="/swift18" component={HomePageComponent} />
+									<Route exact path="/swift18/colors" component={ImagesComponent} />
+									<Route exact path="/swift18/features" component={FeaturesComponent} />
 								</Switch>
 							</div>
 						</div>
